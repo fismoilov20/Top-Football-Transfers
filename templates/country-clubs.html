@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %} Players {% endblock %}
+
+{% block content %}
+      <div class="nav">
+        <h2>– {{clubname}} –</h2>
+        <table class="content-nav">
+          <thead>
+            <tr>
+              <td style="width: 40px;">#</td>
+              <td style="width: 240px;">player</td>
+              <td>positsion</td>
+              <td>nationality</td>
+              <td>
+                transfer value, <br />
+                mill. euro
+              </td>
+            </tr>
+          </thead>
+        </table>
+      </div>
+      <div class="content">
+        <table class="players">
+
+          {% for i in players %}
+          <tr>
+            <td style="width: 40px;">{{i.id}}</td>
+            <td style="width: 240px;">{{i.name}}</td>
+            <td>{{i.age}}</td>
+            <td>{{i.club.country}}</td>
+            <td>{{i.transfer_value}}</td>
+          </tr>
+          {% endfor %}
+          
+        </table>
+
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae soluta
+          sequi quia eos cupiditate rerum accusantium odit enim, expedita,
+          architecto error dignissimos voluptatibus. Nisi illo, maiores fugit
+          amet neque eveniet!
+        </p>
+      </div>
+
+      {% endblock %}

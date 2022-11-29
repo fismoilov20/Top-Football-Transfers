@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}{{c}}{% endblock %}
+
+{% block content %}
+      <div class="nav">
+        <h2>– {{C}} –</h2>
+        <table class="content-nav"></table>
+      </div>
+      <div class="content" style="margin-top: 170px ;">
+        <div class="clubs">
+
+          {% for i in clubs %}
+          <div class="club">
+            <a href="/country-clubs/{{i.name}}">
+              <img src="{{i.logo.url}}" alt="" />
+              {{i.name}}
+            </a>
+          </div>
+          {% endfor %}
+
+        </div>
+      </div>
+{% endblock %}

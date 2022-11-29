@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}Transfer Records{% endblock %}
+
+{% block content %}
+      <div class="nav">
+          <h2>– TRANSFER RECORDS –</h2>
+          <table class="content-nav">
+            <thead>
+              <tr>
+                <td style="width: 40px;">#</td>
+                <td style="width: 240px;">player</td>
+                <td>from</td>
+                <td>to</td>
+                <td>
+                  transfer fee, <br />
+                  mill. euro
+                </td>
+                <td>
+                  season
+                </td>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      <div class="latest-transfers">
+        
+        <table class="top-players">
+          {% for i in transfers %}
+          <tr>
+            <td style="width: 40px;">{{i.id}}</td>
+            <td style="width: 240px;">{{i.player}}</td>
+            <td>{{i.from_club}}</td>
+            <td>{{i.to_club}}</td>
+            <td>{{i.transfer_fee}}</td>
+            <td>{{i.season}}</td>
+          </tr>
+          {% endfor %}
+        </table>
+        <hr>
+        <p>It is a list of the most expensive transfers of all time. The minimum transfer value is 50 million euro.</p>
+      </div>
+{% endblock %}
